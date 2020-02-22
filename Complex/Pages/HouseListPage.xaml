@@ -1,0 +1,32 @@
+﻿<Page x:Class="Complex.Pages.HouseListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Complex.Pages"
+      mc:Ignorable="d"
+      d:DesignWidth="525"
+      Background="White" Height="315"
+      d:DesignHeight="450"
+      Title="HouseListPage">
+
+    <Grid>
+
+        <ListView x:Name="HouseLV" HorizontalAlignment="Left" Height="232" VerticalAlignment="Top" Width="495" Margin="10,43,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" Width="140" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Город" Width="100" DisplayMemberBinding="{Binding City.Name}"/>
+                    <GridViewColumn Header="Статус" Width="100" DisplayMemberBinding="{Binding BuildStatus.Name}"/>
+                    <GridViewColumn Header="Кол-во домов" Width="140" DisplayMemberBinding="{Binding House.Count}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="AddBTN" Content="Добавить" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="75" Click="AddBTN_Click"/>
+        <Button x:Name="EditOPEN" Content="Посмотреть" HorizontalAlignment="Left" Margin="90,280,0,0" VerticalAlignment="Top" Width="100" Click="EditOPEN_Click"/>
+        <Button x:Name="EditBTN" Content="Редактировать" HorizontalAlignment="Left" Margin="195,280,0,0" VerticalAlignment="Top" Width="100" Click="EditBTN_Click"/>
+        <Button x:Name="DelBTN" Content="Удалить" HorizontalAlignment="Left" Margin="300,280,0,0" VerticalAlignment="Top" Width="75" Click="DelBTN_Click"/>
+        <TextBox x:Name="StreetBOX" HorizontalAlignment="Left" Height="23" Margin="88,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="StreetBOX_TextChanged"/>
+        <TextBox x:Name="ComplexBOX" HorizontalAlignment="Left" Height="23" Margin="344,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="ComplexBOX_TextChanged"/>
+    </Grid>
+</Page>

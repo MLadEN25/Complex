@@ -99,6 +99,9 @@
     <Compile Include="Pages\ComplexListPage.xaml.cs">
       <DependentUpon>ComplexListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\HouseListPage.xaml.cs">
+      <DependentUpon>HouseListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SaleStatus.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ComplexListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HouseListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
