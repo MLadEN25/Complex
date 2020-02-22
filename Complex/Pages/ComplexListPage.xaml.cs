@@ -60,6 +60,10 @@ namespace Complex.Pages
             {
                 MessageBox.Show("Выберите комплекс", "Ошибка");
             }
+            else
+            {
+                Navigation.NextPage(new HouseListPage(ComplexLV.SelectedItem as Complex));
+            }
         }
     }
 }

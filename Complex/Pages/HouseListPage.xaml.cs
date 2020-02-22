@@ -55,7 +55,14 @@ namespace Complex.Pages
 
         private void EditOPEN_Click(object sender, RoutedEventArgs e)
         {
-
+            if (HouseLV.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите дома", "Ошибка");
+            }
+            else
+            {
+                Navigation.NextPage(new ApartamentListPage(HouseLV.SelectedItem as House));
+            }
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)

@@ -96,6 +96,9 @@
     <Compile Include="Pages\AddComplexPage.xaml.cs">
       <DependentUpon>AddComplexPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ApartamentListPage.xaml.cs">
+      <DependentUpon>ApartamentListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ComplexListPage.xaml.cs">
       <DependentUpon>ComplexListPage.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\AddComplexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ApartamentListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
