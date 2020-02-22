@@ -40,17 +40,23 @@ namespace Complex.Pages
             }
             else
             {
-                MessageBoxResult MBRes = MessageBox.Show("Вы уверены, что хотите удалить запись о комплексе?", "Удаление", MessageBoxButton.YesNo);
-                switch (MBRes)
+                var complex = ComplexLV.SelectedItem as Complex;
+                if (complex.House.Count == 0)
                 {
-                    case MessageBoxResult.Yes:
-                        MainWindow.db.Complex.Remove(ComplexLV.SelectedItem as Complex);
-                        MainWindow.db.SaveChanges();
-                        ComplexLV.ItemsSource = MainWindow.db.Complex.ToList();
-                        break;
-                    case MessageBoxResult.No:
-                        break;
+                    MessageBoxResult MBRes = MessageBox.Show("Вы уверены, что хотите удалить запись о комплексе?", "Удаление", MessageBoxButton.YesNo);
+                    switch (MBRes)
+                    {
+                        case MessageBoxResult.Yes:
+                            MainWindow.db.Complex.Remove(ComplexLV.SelectedItem as Complex);
+                            MainWindow.db.SaveChanges();
+                            ComplexLV.ItemsSource = MainWindow.db.Complex.ToList();
+                            break;
+                        case MessageBoxResult.No:
+                            break;
+                    }
+                    return;
                 }
+                MessageBox.Show("В комплексах есть зарегестрированные дома", "Ошибка");
             }
         }
 
