@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Complex.Pages
 {
@@ -50,7 +39,20 @@ namespace Complex.Pages
 
         private void AddBTN_Click(object sender, RoutedEventArgs e)
         {
+            Navigation.NextPage(new AddHousePage(null));
+        }
 
+        private void EditBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (HouseLV.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите дом", "Ошибка");
+            }
+            else
+            {
+                Navigation.NextPage(new AddHousePage(HouseLV.SelectedItem as House));
+            }
         }
 
         private void EditOPEN_Click(object sender, RoutedEventArgs e)
@@ -65,22 +67,33 @@ namespace Complex.Pages
             }
         }
 
-        private void EditBTN_Click(object sender, RoutedEventArgs e)
+        private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
 
             if (HouseLV.SelectedItem == null)
             {
-                MessageBox.Show("Выберите дом", "Ошибка");
+                MessageBox.Show("Выберите комплекс", "Ошибка");
             }
             else
             {
-                Navigation.NextPage(new AddComplexPage(HouseLV.SelectedItem as Complex));
+                var house = HouseLV.SelectedItem as House;
+                if (house.Apartment.Count == 0)
+                {
+                    MessageBoxResult MBRes = MessageBox.Show("Вы уверены, что хотите удалить запись о комплексе?", "Удаление", MessageBoxButton.YesNo);
+                    switch (MBRes)
+                    {
+                        case MessageBoxResult.Yes:
+                            MainWindow.db.Complex.Remove(HouseLV.SelectedItem as Complex);
+                            MainWindow.db.SaveChanges();
+                            HouseLV.ItemsSource = MainWindow.db.Complex.ToList();
+                            break;
+                        case MessageBoxResult.No:
+                            break;
+                    }
+                    return;
+                }
+                MessageBox.Show("В домах есть зарегестрированные квартиры", "Ошибка");
             }
-        }
-
-        private void DelBTN_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
