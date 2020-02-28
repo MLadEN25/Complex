@@ -49,7 +49,14 @@ namespace Complex.Pages
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            if (ApartamentLV.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите дом", "Ошибка");
+            }
+            else
+            {
+                Navigation.NextPage(new AddComplexPage(ApartamentLV.SelectedItem as Complex));
+            }
         }
 
         private void DelBTN_Click(object sender, RoutedEventArgs e)

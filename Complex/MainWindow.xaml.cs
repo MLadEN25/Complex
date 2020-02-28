@@ -1,5 +1,4 @@
-﻿using Complex.Pages;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Complex
 {
@@ -13,7 +12,7 @@ namespace Complex
         {
             InitializeComponent();
             Navigation.main = this;
-            MainFrame.Navigate(new ComplexListPage());
+            MainFrame.Navigate(new MainPage());
         }
     }
 }

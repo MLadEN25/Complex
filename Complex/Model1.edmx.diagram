@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="eadc9e665e80462fb1a4941220b02a89" Name="Diagram1">
+      <Diagram DiagramId="eadc9e665e80462fb1a4941220b02a89" Name="Diagram1" ZoomLevel="150">
         <EntityTypeShape EntityType="ComplexDBModel.Apartment" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ComplexDBModel.BuildStatus" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ComplexDBModel.City" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />

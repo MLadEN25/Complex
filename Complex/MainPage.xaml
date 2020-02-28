@@ -1,0 +1,18 @@
+﻿<Page x:Class="Complex.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Complex" 
+      mc:Ignorable="d" 
+      d:DesignHeight="310" d:DesignWidth="515"
+      Background="White"
+      Title="MainPage">
+
+    <Grid>
+        <Button x:Name="BtnComplex" Content="Комплексы" HorizontalAlignment="Left" Height="38" Margin="139,68,0,0" VerticalAlignment="Top" Width="225" Click="BtnComplex_Click"/>
+        <Button x:Name="BtnHouse" Content="Дома" HorizontalAlignment="Left" Height="38" Margin="139,111,0,0" VerticalAlignment="Top" Width="225" Click="BtnHouse_Click"/>
+        <Button x:Name="BtnApartament" Content="Квартиры" HorizontalAlignment="Left" Height="38" Margin="139,154,0,0" VerticalAlignment="Top" Width="225" Click="BtnApartament_Click"/>
+
+    </Grid>
+</Page>
