@@ -1,0 +1,33 @@
+﻿<Page x:Class="Complex.Pages.AddApartamentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Complex.Pages"
+      mc:Ignorable="d" 
+      d:DesignWidth="525"
+      Background="White" Height="315"
+      d:DesignHeight="450"
+      Title="AddApartamentPage">
+
+    <Grid>
+        <ListView x:Name="HouseLV" HorizontalAlignment="Left" Height="232" VerticalAlignment="Top" Width="233" Margin="10,43,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Номер" DisplayMemberBinding="{Binding NumberOfHouse}"/>
+                    <GridViewColumn Header="Улица" DisplayMemberBinding="{Binding Street}"/>
+                    <GridViewColumn Header="Комплекс" DisplayMemberBinding="{Binding Complex.Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="CountOfRooms" HorizontalAlignment="Left" Height="23" Margin="378,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AreaTB" HorizontalAlignment="Left" Height="23" Margin="378,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="AddValueTB" HorizontalAlignment="Left" Height="23" Margin="378,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CountOfRoomsTB" HorizontalAlignment="Left" Height="23" Margin="378,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CostOfBuildingTB" HorizontalAlignment="Left" Height="23" Margin="378,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PorchTB" HorizontalAlignment="Left" Height="23" Margin="378,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FloorTB" HorizontalAlignment="Left" Height="23" Margin="378,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="CtateCB" HorizontalAlignment="Left" Margin="378,255,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="AddEditBTN" HorizontalAlignment="Left" Margin="405,280,0,0" VerticalAlignment="Top" Width="100" Click="AddEditBTN_Click"/>
+    </Grid>
+</Page>

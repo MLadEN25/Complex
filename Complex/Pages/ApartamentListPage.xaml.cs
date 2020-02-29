@@ -28,29 +28,42 @@ namespace Complex.Pages
 
         private void AddBTN_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void EditOPEN_Click(object sender, RoutedEventArgs e)
-        {
-
+            Navigation.NextPage(new AddApartamentPage(ApartamentLV.SelectedItem as Apartment));
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
             if (ApartamentLV.SelectedItem == null)
             {
-                MessageBox.Show("Выберите дом", "Ошибка");
+                MessageBox.Show("Выберите квартиру", "Ошибка");
             }
             else
             {
-                Navigation.NextPage(new AddComplexPage(ApartamentLV.SelectedItem as Complex));
+                Navigation.NextPage(new AddApartamentPage(ApartamentLV.SelectedItem as Apartment));
             }
         }
 
         private void DelBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            if (ApartamentLV.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите квартиру", "Ошибка");
+            }
+            else
+            {
+                var apartment = ApartamentLV.SelectedItem as Apartment;
+                MessageBoxResult MBRes = MessageBox.Show("Вы уверены, что хотите удалить запись о квартире?", "Удаление", MessageBoxButton.YesNo);
+                switch (MBRes)
+                {
+                    case MessageBoxResult.Yes:
+                        MainWindow.db.Apartment.Remove(apartment);
+                        MainWindow.db.SaveChanges();
+                        ApartamentLV.ItemsSource = MainWindow.db.Complex.ToList();
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+                }
+            }
         }
     }
 }
