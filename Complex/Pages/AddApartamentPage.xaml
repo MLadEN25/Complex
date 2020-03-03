@@ -20,14 +20,22 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox x:Name="CountOfRooms" HorizontalAlignment="Left" Height="23" Margin="378,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="NumnOfFlatTB" HorizontalAlignment="Left" Height="23" Margin="378,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="AreaTB" HorizontalAlignment="Left" Height="23" Margin="378,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="AddValueTB" HorizontalAlignment="Left" Height="23" Margin="378,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="CountOfRoomsTB" HorizontalAlignment="Left" Height="23" Margin="378,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="CostOfBuildingTB" HorizontalAlignment="Left" Height="23" Margin="378,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="PorchTB" HorizontalAlignment="Left" Height="23" Margin="378,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="FloorTB" HorizontalAlignment="Left" Height="23" Margin="378,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="CtateCB" HorizontalAlignment="Left" Margin="378,255,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="StateCB" HorizontalAlignment="Left" Margin="378,255,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="AddEditBTN" HorizontalAlignment="Left" Margin="405,280,0,0" VerticalAlignment="Top" Width="100" Click="AddEditBTN_Click"/>
+        <Label Content="Этаж" HorizontalAlignment="Left" Margin="261,59,0,0" VerticalAlignment="Top"/>
+        <Label Content="Площадь" HorizontalAlignment="Left" Margin="261,87,0,0" VerticalAlignment="Top"/>
+        <Label Content="Доб. стоймость" HorizontalAlignment="Left" Margin="261,115,0,0" VerticalAlignment="Top"/>
+        <Label Content="Каол-во комнат" HorizontalAlignment="Left" Margin="261,143,0,0" VerticalAlignment="Top"/>
+        <Label Content="ещё стоимость" HorizontalAlignment="Left" Margin="261,174,0,0" VerticalAlignment="Top"/>
+        <Label Content="Подьезд" HorizontalAlignment="Left" Margin="261,199,0,0" VerticalAlignment="Top"/>
+        <Label Content="Этаж" HorizontalAlignment="Left" Margin="261,227,0,0" VerticalAlignment="Top"/>
+        <Label Content="Статус" HorizontalAlignment="Left" Margin="261,255,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
