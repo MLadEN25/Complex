@@ -1,8 +1,17 @@
 ﻿<Window x:Class="Complex.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="632.836" Width="525">
     <Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="507*"/>
+        </Grid.RowDefinitions>
+        <Image Height="94" Margin="10,1,310,0" Source="logo.png" />
+        <StackPanel Grid.Row="1">
+            <Frame x:Name="MainFrame"/>
+        </StackPanel>
+        <Label x:Name="TitlePageName" HorizontalAlignment="Left" Margin="297,39,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

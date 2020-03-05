@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="310" d:DesignWidth="515"
       Background="White"
-      Title="MainPage">
+      Title="Меню">
 
     <Grid>
         <Button x:Name="BtnComplex" Content="Комплексы" HorizontalAlignment="Left" Height="38" Margin="139,68,0,0" VerticalAlignment="Top" Width="225" Click="BtnComplex_Click"/>

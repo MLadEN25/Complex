@@ -12,7 +12,12 @@ namespace Complex
         {
             InitializeComponent();
             Navigation.main = this;
-            MainFrame.Navigate(new MainPage());
+            Navigation.NextPage(new MainPage());
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.BackPage();
         }
     }
 }
