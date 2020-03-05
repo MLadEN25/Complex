@@ -19,6 +19,7 @@
           <Property Name="SaleStatusID" Type="int" Nullable="false" />
           <Property Name="AddedValue" Type="int" Nullable="false" />
           <Property Name="CostOfBuilding" Type="int" Nullable="false" />
+          <Property Name="VisibleStatus" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="BuildStatus">
           <Key>
@@ -44,6 +45,7 @@
           <Property Name="BuildStatusID" Type="int" Nullable="false" />
           <Property Name="AddedValue" Type="int" Nullable="false" />
           <Property Name="ConstructionCost" Type="int" Nullable="false" />
+          <Property Name="VisibleStatus" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="House">
           <Key>
@@ -55,6 +57,7 @@
           <Property Name="ComplexID" Type="int" Nullable="false" />
           <Property Name="AddedValue" Type="int" Nullable="false" />
           <Property Name="ConstructionCost" Type="int" Nullable="false" />
+          <Property Name="VisibleStatus" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="SaleStatus">
           <Key>
@@ -181,6 +184,7 @@
           <Property Name="SaleStatusID" Type="Int32" Nullable="false" />
           <Property Name="AddedValue" Type="Int32" Nullable="false" />
           <Property Name="CostOfBuilding" Type="Int32" Nullable="false" />
+          <Property Name="VisibleStatus" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="House" Relationship="Self.FK_Apartment_House" FromRole="Apartment" ToRole="House" />
           <NavigationProperty Name="SaleStatus" Relationship="Self.FK_Apartment_SaleStatus" FromRole="Apartment" ToRole="SaleStatus" />
         </EntityType>
@@ -210,6 +214,7 @@
           <Property Name="BuildStatusID" Type="Int32" Nullable="false" />
           <Property Name="AddedValue" Type="Int32" Nullable="false" />
           <Property Name="ConstructionCost" Type="Int32" Nullable="false" />
+          <Property Name="VisibleStatus" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="BuildStatus" Relationship="Self.FK_Complex_BuildStatus" FromRole="Complex" ToRole="BuildStatus" />
           <NavigationProperty Name="City" Relationship="Self.FK_Complex_City" FromRole="Complex" ToRole="City" />
           <NavigationProperty Name="House" Relationship="Self.FK_House_Complex" FromRole="Complex" ToRole="House" />
@@ -224,6 +229,7 @@
           <Property Name="ComplexID" Type="Int32" Nullable="false" />
           <Property Name="AddedValue" Type="Int32" Nullable="false" />
           <Property Name="ConstructionCost" Type="Int32" Nullable="false" />
+          <Property Name="VisibleStatus" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Apartment" Relationship="Self.FK_Apartment_House" FromRole="House" ToRole="Apartment" />
           <NavigationProperty Name="Complex" Relationship="Self.FK_House_Complex" FromRole="House" ToRole="Complex" />
         </EntityType>
@@ -353,6 +359,7 @@
                 <ScalarProperty Name="SaleStatusID" ColumnName="SaleStatusID" />
                 <ScalarProperty Name="AddedValue" ColumnName="AddedValue" />
                 <ScalarProperty Name="CostOfBuilding" ColumnName="CostOfBuilding" />
+                <ScalarProperty Name="VisibleStatus" ColumnName="VisibleStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -381,6 +388,7 @@
                 <ScalarProperty Name="BuildStatusID" ColumnName="BuildStatusID" />
                 <ScalarProperty Name="AddedValue" ColumnName="AddedValue" />
                 <ScalarProperty Name="ConstructionCost" ColumnName="ConstructionCost" />
+                <ScalarProperty Name="VisibleStatus" ColumnName="VisibleStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -393,6 +401,7 @@
                 <ScalarProperty Name="ComplexID" ColumnName="ComplexID" />
                 <ScalarProperty Name="AddedValue" ColumnName="AddedValue" />
                 <ScalarProperty Name="ConstructionCost" ColumnName="ConstructionCost" />
+                <ScalarProperty Name="VisibleStatus" ColumnName="VisibleStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

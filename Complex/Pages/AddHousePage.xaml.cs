@@ -15,7 +15,7 @@ namespace Complex.Pages
         public AddHousePage(House house)
         {
             InitializeComponent();
-            ComplexLV.ItemsSource = MainWindow.db.Complex.ToList();
+            ComplexLV.ItemsSource = MainWindow.db.Complex.Where(h => h.VisibleStatus).ToList();
             if (house != null)
             {
                 HouseNumerTB.Text = house.NumberOfHouse;
@@ -64,7 +64,7 @@ namespace Complex.Pages
                 }
                 MainWindow.db.SaveChanges();
                 MessageBox.Show("Успешно", "Добавление");
-                Navigation.NextPage(new ComplexListPage());
+                Navigation.BackPage();
             }
             else
             {

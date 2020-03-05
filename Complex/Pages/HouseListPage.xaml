@@ -8,7 +8,7 @@
       d:DesignWidth="525"
       Background="White" Height="315"
       d:DesignHeight="450"
-      Title="HouseListPage">
+      Title="Список домов">
 
     <Grid>
 
@@ -18,7 +18,7 @@
                     <GridViewColumn Header="Номер" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="Улица" DisplayMemberBinding="{Binding Street}"/>
                     <GridViewColumn Header="Комплекс" DisplayMemberBinding="{Binding Complex.Name}"/>
-                    <GridViewColumn Header="Кол-во домов" DisplayMemberBinding="{Binding Apartment.Count}"/>
+                    <GridViewColumn Header="Кол-во домов" DisplayMemberBinding="{Binding Count}"/>
                 </GridView>
             </ListView.View>
         </ListView>

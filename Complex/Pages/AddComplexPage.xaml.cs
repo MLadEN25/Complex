@@ -13,7 +13,10 @@ namespace Complex.Pages
         public AddComplexPage(Complex sel)
         {
             InitializeComponent();
-            StatusCB.ItemsSource = MainWindow.db.BuildStatus.ToList();
+            if (sel.House.All(h => h.Apartment.Any(a => a.SaleStatusID == 1)))
+                StatusCB.ItemsSource = MainWindow.db.BuildStatus.Where(s=>s.ID!=2).ToList();
+            else
+                StatusCB.ItemsSource = MainWindow.db.BuildStatus.ToList();
             StatusCB.DisplayMemberPath = "Name";
             CityCB.ItemsSource = MainWindow.db.City.ToList();
             CityCB.DisplayMemberPath = "Name";
@@ -66,7 +69,7 @@ namespace Complex.Pages
             }
             MainWindow.db.SaveChanges();
             MessageBox.Show("Успешно","Добавление");
-            Navigation.NextPage(new ComplexListPage());
+            Navigation.BackPage();
         }
     }
 }

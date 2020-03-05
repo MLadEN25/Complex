@@ -24,6 +24,7 @@ namespace Complex
         public int SaleStatusID { get; set; }
         public int AddedValue { get; set; }
         public int CostOfBuilding { get; set; }
+        public bool VisibleStatus { get; set; }
     
         public virtual House House { get; set; }
         public virtual SaleStatus SaleStatus { get; set; }

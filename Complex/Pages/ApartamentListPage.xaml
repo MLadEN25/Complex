@@ -8,7 +8,7 @@
       d:DesignWidth="525"
       Background="White" Height="315"
       d:DesignHeight="450"
-      Title="ApartamentListPage">
+      Title="Список квартир">
 
     <Grid>
         <ListView x:Name="ApartamentLV" HorizontalAlignment="Left" Height="265" VerticalAlignment="Top" Width="505" Margin="10,10,0,0">

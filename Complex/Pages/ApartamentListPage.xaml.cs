@@ -16,11 +16,11 @@ namespace Complex.Pages
             InitializeComponent(); 
             if (house == null)
             {
-                ApartamentLV.ItemsSource = MainWindow.db.Apartment.ToList();
+                ApartamentLV.ItemsSource = MainWindow.db.Apartment.Where(h=>h.VisibleStatus).ToList();
             }
             else
             {
-                ApartamentLV.ItemsSource = MainWindow.db.Apartment.Where(h => h.HouseID == house.ID).ToList();
+                ApartamentLV.ItemsSource = MainWindow.db.Apartment.Where(h => h.HouseID == house.ID && h.VisibleStatus).ToList();
             }
 
             this.house = house;
@@ -56,12 +56,17 @@ namespace Complex.Pages
                 switch (MBRes)
                 {
                     case MessageBoxResult.Yes:
-                        MainWindow.db.Apartment.Remove(apartment);
+                        apartment.VisibleStatus = false;
                         MainWindow.db.SaveChanges();
-                        ApartamentLV.ItemsSource = MainWindow.db.Complex.ToList();
+                        if(house==null)
+                            ApartamentLV.ItemsSource = MainWindow.db.Apartment.Where(h => h.VisibleStatus).ToList();
+                        else
+                            ApartamentLV.ItemsSource = MainWindow.db.Apartment.Where(h => h.HouseID == house.ID && h.VisibleStatus).ToList();
+                        MessageBox.Show("Удалено!");
                         break;
                     case MessageBoxResult.No:
                         break;
+
                 }
             }
         }

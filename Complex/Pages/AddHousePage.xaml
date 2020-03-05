@@ -8,7 +8,7 @@
       d:DesignWidth="525"
       Background="White" Height="315"
       d:DesignHeight="450"
-      Title="AddHousePage">
+      Title="Добавление/Изменение домов">
 
     <Grid>
 

@@ -17,11 +17,11 @@ namespace Complex.Pages
             this.complex = complex;
             if (complex == null)
             {
-                HouseLV.ItemsSource = MainWindow.db.House.ToList();
+                HouseLV.ItemsSource = MainWindow.db.House.Where(h => h.VisibleStatus).ToList();
             }
             else
             {
-                HouseLV.ItemsSource = MainWindow.db.House.Where(h => h.ComplexID == complex.ID).ToList();
+                HouseLV.ItemsSource = MainWindow.db.House.Where(h => h.ComplexID == complex.ID && h.VisibleStatus).ToList();
                 ComplexBOX.Text = complex.Name;
                 ComplexBOX.IsEnabled = false;
             }
@@ -83,9 +83,13 @@ namespace Complex.Pages
                     switch (MBRes)
                     {
                         case MessageBoxResult.Yes:
-                            MainWindow.db.Complex.Remove(HouseLV.SelectedItem as Complex);
+                            house.VisibleStatus = false;
                             MainWindow.db.SaveChanges();
-                            HouseLV.ItemsSource = MainWindow.db.Complex.ToList();
+                            if (complex == null)
+                                HouseLV.ItemsSource = MainWindow.db.House.Where(h => h.VisibleStatus).ToList();
+                            else
+                                HouseLV.ItemsSource = MainWindow.db.House.Where(h => h.ComplexID == complex.ID && h.VisibleStatus).ToList();
+                            MessageBox.Show("Удалено!");
                             break;
                         case MessageBoxResult.No:
                             break;

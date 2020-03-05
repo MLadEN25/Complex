@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="eadc9e665e80462fb1a4941220b02a89" Name="Diagram1" ZoomLevel="150">
+      <Diagram DiagramId="f4bb49e6a2de4aa89b98080a8e5bd1ed" Name="Diagram1">
         <EntityTypeShape EntityType="ComplexDBModel.Apartment" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ComplexDBModel.BuildStatus" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ComplexDBModel.City" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComplexDBModel.BuildStatus" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComplexDBModel.City" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="ComplexDBModel.Complex" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ComplexDBModel.House" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ComplexDBModel.SaleStatus" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComplexDBModel.SaleStatus" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="ComplexDBModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="ComplexDBModel.FK_Apartment_House" ManuallyRouted="false" />
         <AssociationConnector Association="ComplexDBModel.FK_Apartment_SaleStatus" ManuallyRouted="false" />

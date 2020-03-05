@@ -12,7 +12,10 @@ namespace Complex.Pages
         public ComplexListPage()
         {
             InitializeComponent();
-            ComplexLV.ItemsSource = MainWindow.db.Complex.ToList();
+            ComplexLV.ItemsSource = MainWindow.db.Complex.Where(c => c.VisibleStatus).ToList();
+
+            CityCB.ItemsSource = MainWindow.db.City.ToList();
+            CityCB.DisplayMemberPath = "Name";
         }
 
         private void AddBTN_Click(object sender, RoutedEventArgs e)
@@ -47,9 +50,10 @@ namespace Complex.Pages
                     switch (MBRes)
                     {
                         case MessageBoxResult.Yes:
-                            MainWindow.db.Complex.Remove(ComplexLV.SelectedItem as Complex);
+                            complex.VisibleStatus = false;
                             MainWindow.db.SaveChanges();
-                            ComplexLV.ItemsSource = MainWindow.db.Complex.ToList();
+                            ComplexLV.ItemsSource = MainWindow.db.Complex.Where(h => h.VisibleStatus).ToList();
+                            MessageBox.Show("Удалено!");
                             break;
                         case MessageBoxResult.No:
                             break;
@@ -69,6 +73,15 @@ namespace Complex.Pages
             else
             {
                 Navigation.NextPage(new HouseListPage(ComplexLV.SelectedItem as Complex));
+            }
+        }
+
+        private void CityCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (CityCB.SelectedIndex != -1)
+            {
+                var sel = CityCB.SelectedItem as City;
+                ComplexLV.ItemsSource = MainWindow.db.Complex.Where(c => c.VisibleStatus && c.CityID == sel.ID).ToList();
             }
         }
     }

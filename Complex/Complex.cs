@@ -11,7 +11,8 @@ namespace Complex
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Complex
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,10 +27,13 @@ namespace Complex
         public int BuildStatusID { get; set; }
         public int AddedValue { get; set; }
         public int ConstructionCost { get; set; }
+        public bool VisibleStatus { get; set; }
     
         public virtual BuildStatus BuildStatus { get; set; }
         public virtual City City { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<House> House { get; set; }
+
+        public virtual int Count => House.Count(a => a.VisibleStatus);
     }
 }

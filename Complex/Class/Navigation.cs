@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Controls;
 
 namespace Complex
@@ -14,6 +13,7 @@ namespace Complex
         {
             main.MainFrame.Navigate(Page);
             main.TitlePageName.Content = Page.Title;
+            pages.Add(Page);
         }
 
         internal static void BackPage()
@@ -22,6 +22,7 @@ namespace Complex
             {
                 pages.Remove(pages[pages.Count - 1]);
                 main.TitlePageName.Content = (pages[pages.Count - 1]).Title;
+                main.MainFrame.GoBack();
             }
         }
     }

@@ -16,7 +16,7 @@ namespace Complex.Pages
         {
             InitializeComponent();
             this.apartment = apartment;
-            HouseLV.ItemsSource = MainWindow.db.House.ToList();
+            HouseLV.ItemsSource = MainWindow.db.House.Where(h => h.VisibleStatus).ToList();
             StateCB.ItemsSource = MainWindow.db.SaleStatus.ToList();
             StateCB.DisplayMemberPath = "Name";
             if (apartment != null)
@@ -74,7 +74,7 @@ namespace Complex.Pages
             }
             MainWindow.db.SaveChanges();
             MessageBox.Show("Успешно", "Добавление");
-            Navigation.NextPage(new ApartamentListPage());
+            Navigation.BackPage();
         }
     }
 }

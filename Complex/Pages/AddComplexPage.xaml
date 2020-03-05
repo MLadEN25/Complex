@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Complex.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="310" d:DesignWidth="515"
-      Title="AddComplexPage"
+      Title="Добавление/Изменение комплеков"
       Background="White">
 
     <Grid>
