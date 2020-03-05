@@ -9,7 +9,7 @@
         </Grid.RowDefinitions>
         <Image Height="94" Margin="10,1,310,0" Source="logo.png" />
         <StackPanel Grid.Row="1">
-            <Frame x:Name="MainFrame"/>
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
         </StackPanel>
         <Label x:Name="TitlePageName" HorizontalAlignment="Left" Margin="304,10,0,0" VerticalAlignment="Top"/>
         <Button x:Name="BackBtn" Content="Назад" HorizontalAlignment="Left" Margin="311,57,0,0" VerticalAlignment="Top" Width="75" Click="BackBtn_Click"/>

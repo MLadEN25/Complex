@@ -28,5 +28,7 @@ namespace Complex
     
         public virtual House House { get; set; }
         public virtual SaleStatus SaleStatus { get; set; }
+
+        public virtual string Address => String.Format("ул.{0}, д.{1}, кв.{2}", House.Street, House.NumberOfHouse, NumOfFlat);
     }
 }

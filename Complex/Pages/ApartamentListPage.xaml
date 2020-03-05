@@ -14,10 +14,11 @@
         <ListView x:Name="ApartamentLV" HorizontalAlignment="Left" Height="265" VerticalAlignment="Top" Width="505" Margin="10,10,0,0">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Номер" Width="140" DisplayMemberBinding="{Binding NumOfFlat}"/>
-                    <GridViewColumn Header="Дом" Width="100" DisplayMemberBinding="{Binding House.NumberOfHouse}"/>
-                    <GridViewColumn Header="Статус" Width="100" DisplayMemberBinding="{Binding BuildStatus.Name}"/>
-                    <GridViewColumn Header="Кол-во домов" Width="140" DisplayMemberBinding="{Binding House.Count}"/>
+                    <GridViewColumn Header="Номер кв" DisplayMemberBinding="{Binding NumOfFlat}"/>
+                    <GridViewColumn Header="Дом" DisplayMemberBinding="{Binding House.NumberOfHouse}"/>
+                    <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding SaleStatus.Name}"/>
+                    <GridViewColumn Header="Площадь" DisplayMemberBinding="{Binding Area}"/>
+                    <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding Address}"/>
                 </GridView>
             </ListView.View>
         </ListView>
